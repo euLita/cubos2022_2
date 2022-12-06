@@ -34,28 +34,28 @@ Apesar da universidade ter disponibilizado 15 vagas, somente 11 pessoas obtivera
 
 
 function solucao(notaMinima,totalDeVagas,notasDoVestibular) {
-	console.log('vagas disponiveis: ', totalDeVagas)
+	// console.log('vagas disponiveis: ', totalDeVagas)
 	let i = 0;
 	let aptos = [];
 	let selecionados = 0;
-	// Pega os aptos;
+	// pega os aptos
 	while (notasDoVestibular.length > i) {
 		if (notasDoVestibular[i] >= notaMinima) {
 			aptos.push(notasDoVestibular[i]);
 		}
-		i++;
+		i++; // controla o loop
 	}
 
-	aptos = aptos.sort().reverse(); //Ordena do maior para o menor;
-	console.log('aptos', aptos)
+	aptos = aptos.sort().reverse(); // ordena do maior para o menor
+	// console.log('aptos', aptos)
+
 	/**
-	 * Sobrepondo o numero de alunos aptos em relacao ao numero de vagas disponiveis elimine com base no total de vagas disponiveis;
+	 * se o total de classificados for maior que o numero de vagas oferecidos entao, ordena e exclui da nota maior para a menor ou ate que o numero de vagas seja preenchido;
 	 */
 	let classificados = aptos.slice(0, totalDeVagas);
-
-	selecionados = classificados.length;
-	console.log(`classificados:`, classificados)
-	console.log(selecionados);
+	console.log(classificados.length);
+	// console.log(`classificados:`, classificados)
+	// console.log(selecionados);
 }
 
 function naoMexer(input) {
@@ -66,7 +66,7 @@ function naoMexer(input) {
 	solucao(notaMinima,totalDeVagas,notasDoVestibular);
 }
 let input = `65
-1
-30 56 95 23 56 78`;
+15
+30 56 43 23 56 78 98 76 98 88 77 34.5 67.8 90.5 76.8 94.2 25.6 73 26 33`;
 // require('fs').readFileSync('/dev/stdin','utf8');
 naoMexer(input);
